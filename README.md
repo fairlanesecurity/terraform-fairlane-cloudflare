@@ -45,8 +45,8 @@ resource "random_password" "encryption_secret" {
 | `cloudflare_zone_id`    | `string`  | Required            | -             | Identifier for the Cloudflare zone of the domain.           |
 | `origin_ip`             | `string`  | Required            | -             | IP address of the origin server.                            |
 | `domain`                | `string`  | Required            | -             | Primary domain without the 'www.' prefix.                   |
+| `encryption_secret`     | `string`  | Required            | -             | 256-bit secret key used for encryption.                     |
 | `create_worker_domain`  | `boolean` | Optional            | `false`       | Boolean indicating whether to create a worker domain.       |
 | `use_www`               | `boolean` | Optional            | `true`        | Boolean indicating whether to include 'www.' in the domain. |
 | `auto_update`           | `boolean` | Optional            | `true`        | Boolean value to enable or disable auto-updates.            |
 | `auto_update_schedule`  | `string`  | Optional            | `*/5 * * * *` | Cron schedule for auto-updates.                             |
-| `encryption_secret`     | `string`  | Required            | -             | 256-bit secret key used for encryption.                     |
