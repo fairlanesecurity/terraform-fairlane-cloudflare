@@ -34,11 +34,6 @@ variable "domain" {
   type = string
 }
 
-variable "fairname" {
-  type    = string
-  default = "fairlane.cloud"
-}
-
 variable "create_worker_domain" {
   type    = bool
   default = false

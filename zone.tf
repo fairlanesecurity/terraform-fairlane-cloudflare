@@ -10,7 +10,7 @@ resource "cloudflare_record" "origin_record" {
 resource "cloudflare_record" "fairlane_record" {
   zone_id = var.cloudflare_zone_id
   name    = "fairlane"
-  value   = "${var.domain}.customer.${var.fairname}"
+  value   = "${var.domain}.customer.${local.fairlane_domain}"
   type    = "CNAME"
   ttl     = 1
   proxied = true
