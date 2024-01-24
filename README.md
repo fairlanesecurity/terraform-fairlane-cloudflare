@@ -11,6 +11,8 @@ module "consufair-lane" {
   fairlane_licence_key = "123"
   fairlane_worker_url = "https://fairlane.dev/fwu.ts"
 
+  encryption_secret = base64encode(random_password.encryption_secret.result)
+
   cloudflare_account_id = "1x4mpl3"
   cloudflare_api_token = "ExAmPle"
   cloudflare_zone_id = "1337f"
@@ -20,5 +22,10 @@ module "consufair-lane" {
 
   create_worker_domain = true
   use_www = true
+}
+
+resource "random_password" "encryption_secret" {
+  length  = 32
+  special = true
 }
 ```

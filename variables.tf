@@ -58,3 +58,7 @@ variable "auto_update_schedule" {
   type    = string
   default = "*/5 * * * *" # every 5 minutes
 }
+
+variable "encryption_secret" {
+  type = string
+}

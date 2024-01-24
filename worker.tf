@@ -48,6 +48,11 @@ resource "cloudflare_worker_script" "fairlane_worker" {
     name = "CLOUDFLARE_API_TOKEN"
     text = var.cloudflare_api_token
   }
+
+  secret_text_binding {
+    name = "ENCRYPTION_SECRET"
+    text = var.encryption_secret
+  }
 }
 
 resource "cloudflare_worker_cron_trigger" "auto_update" {
