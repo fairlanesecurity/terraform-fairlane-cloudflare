@@ -6,7 +6,7 @@ Main repository for the terraform-fairlane-cloudflare module
 
 ```
 module "consufair-lane" {
-  source = "../terraform-fairlane-cloudflare"
+  source = "github.com/fairlanesecurity/terraform-fairlane-cloudflare"
 
   fairlane_customer_id = "1"
   fairlane_api_token = "abc"
