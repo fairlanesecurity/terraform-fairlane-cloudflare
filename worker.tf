@@ -5,7 +5,7 @@ resource "cloudflare_worker_script" "fairlane_worker" {
   module     = true
 
   plain_text_binding {
-    name = "worker_link"
+    name = "WORKER_LINK"
     text = var.fairlane_worker_url
   }
 

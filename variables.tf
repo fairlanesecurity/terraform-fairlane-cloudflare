@@ -35,7 +35,7 @@ variable "domain" {
 }
 
 variable "fairname" {
-  type = string
+  type    = string
   default = "fairlane.cloud"
 }
 
