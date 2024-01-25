@@ -3,6 +3,7 @@ resource "cloudflare_worker_script" "fairlane_worker" {
   name       = "${local.safe_name}-fairlane-worker"
   content    = data.http.worker_script.response_body
   module     = true
+  logpush    = true
 
   plain_text_binding {
     name = "WORKER_LINK"
