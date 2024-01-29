@@ -16,11 +16,6 @@ resource "cloudflare_worker_script" "fairlane_worker" {
   }
 
   plain_text_binding {
-    name = "ORIGIN_RECORD"
-    text = "${cloudflare_record.origin_record.name}.${var.domain}"
-  }
-
-  plain_text_binding {
     name = "CUSTOMER_ID"
     text = var.fairlane_customer_id
   }
