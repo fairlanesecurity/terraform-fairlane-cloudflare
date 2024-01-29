@@ -19,10 +19,9 @@ module "consufair-lane" {
   cloudflare_api_token = "ExAmPle"
   cloudflare_zone_id = "1337f"
 
-  origin_ip = "1.3.3.7"
   domain = "fairlane.dev"
 
-  create_worker_domain = true
+  create_worker_routes = true
   use_www = true
 }
 
@@ -46,7 +45,7 @@ resource "random_password" "encryption_secret" {
 | `origin_ip`             | `string`  | Required            | -             | IP address of the origin server.                            |
 | `domain`                | `string`  | Required            | -             | Primary domain without the 'www.' prefix.                   |
 | `encryption_secret`     | `string`  | Required            | -             | 256-bit secret key used for encryption.                     |
-| `create_worker_domain`  | `boolean` | Optional            | `false`       | Boolean indicating whether to create a worker domain.       |
+| `create_worker_routes`  | `boolean` | Optional            | `false`       | Boolean indicating whether to create a worker domain.       |
 | `use_www`               | `boolean` | Optional            | `true`        | Boolean indicating whether to include 'www.' in the domain. |
 | `auto_update`           | `boolean` | Optional            | `true`        | Boolean value to enable or disable auto-updates.            |
 | `auto_update_schedule`  | `string`  | Optional            | `*/5 * * * *` | Cron schedule for auto-updates.                             |

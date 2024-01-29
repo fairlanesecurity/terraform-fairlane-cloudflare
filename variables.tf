@@ -36,16 +36,6 @@ variable "cloudflare_zone_id" {
   description = "Identifier for the Cloudflare zone."
 }
 
-variable "origin_ip" {
-  type        = string
-  description = "IP address of the origin server."
-
-  validation {
-    condition     = can(regex("^\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\b", var.origin_ip))
-    error_message = "Invalid IPv4 address format. Please provide a valid IPv4 address."
-  }
-}
-
 variable "domain" {
   type        = string
   description = "Primary domain without the 'www.' prefix."
@@ -56,10 +46,10 @@ variable "domain" {
   }
 }
 
-variable "create_worker_domain" {
+variable "create_worker_routes" {
   type        = bool
   default     = false
-  description = "Boolean indicating whether to create a worker domain. Defaults to false."
+  description = "Boolean indicating whether to create a worker routes. Defaults to false."
 }
 
 variable "use_www" {
