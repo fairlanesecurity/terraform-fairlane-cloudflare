@@ -14,7 +14,7 @@ resource "cloudflare_worker_route" "fairlane" {
   count       = var.create_worker_routes ? 1 : 0
 }
 
-resource "cloudflare_worker_route" "fairlane_www" {
+resource "cloudflare_worker_route" "fairlane_record_www" {
   zone_id     = var.cloudflare_zone_id
   pattern     = "www.${var.domain}/*"
   script_name = cloudflare_worker_script.fairlane_worker.name
