@@ -5,5 +5,5 @@ resource "cloudflare_logpush_job" "fairlane_logpush" {
   logpull_options  = "fields=DispatchNamespace,Event,EventTimestampMs,EventType,Exceptions,Logs,Outcome,ScriptName,ScriptTags&timestamps=rfc3339"
   enabled          = true
   account_id       = var.cloudflare_account_id
-  filter           = "{\"where\":{\"and\":[{\"and\":[{\"key\":\"ScriptName\",\"operator\":\"eq\",\"value\":\"${cloudflare_worker_script.fairlane_worker.name}\"}]}]}}"
+  filter           = "{\"where\":{\"and\":[{\"and\":[{\"key\":\"ScriptName\",\"operator\":\"eq\",\"value\":\"${cloudflare_workers_script.fairlane_worker.name}\"}]}]}}"
 }

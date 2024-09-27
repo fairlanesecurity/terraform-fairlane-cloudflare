@@ -1,4 +1,4 @@
-resource "cloudflare_worker_script" "fairlane_worker" {
+resource "cloudflare_workers_script" "fairlane_worker" {
   account_id = var.cloudflare_account_id
   name       = "${local.safe_name}-fairlane-worker"
   content    = data.http.worker_script.response_body
@@ -54,7 +54,7 @@ resource "cloudflare_worker_script" "fairlane_worker" {
 resource "cloudflare_worker_cron_trigger" "auto_update" {
   count       = var.auto_update ? 1 : 0
   account_id  = var.cloudflare_account_id
-  script_name = cloudflare_worker_script.fairlane_worker.name
+  script_name = cloudflare_workers_script.fairlane_worker.name
   schedules = [
     var.auto_update_schedule,
   ]
