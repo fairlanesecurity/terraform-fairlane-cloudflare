@@ -80,3 +80,9 @@ variable "encryption_secret" {
   description = "256-bit secret key used for encryption."
   sensitive   = true
 }
+
+variable "development" {
+  type        = bool
+  default     = false
+  description = "Boolean indicating whether the worker is running in the development environment. Defaults to false."
+}
